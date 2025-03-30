@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findMinElement(arr) {
+    if (!Array.isArray(arr) || arr.some(isNaN)) {
+        return "Giá trị không hợp lệ";
+    }
+    if (arr.length === 0) {
+        return "Mảng không chứa phần tử";
+    }
+    let min = Math.min(...arr);
+    return `Phần tử nhỏ nhất trong mảng là ${min}`;
+}
+// Yêu cầu người dùng nhập dữ liệu
+let userInput = prompt("Nhập một mảng số nguyên, cách nhau bởi dấu phẩy (ví dụ: 2,4,8,1,9):");
+// Xử lý đầu vào
+let arr = userInput.split(",").map(num => Number(num.trim()));
+// Kiểm tra dữ liệu và hiển thị kết quả
+if (arr.some(isNaN) || userInput.trim() === "") {
+    alert("Giá trị không hợp lệ");
+} else {
+    alert(findMinElement(arr));
+}
+    </script>
+</body>
+</html>
